@@ -37,7 +37,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Contact</h3>
             <ul className="space-y-2 text-secondary">
               <li>Email: info@forgetalent.com</li>
-              <li>Phone: +27 123 456 789</li>
+              <li>Phone: +27 10 880 3795</li>
             </ul>
           </div>
 
