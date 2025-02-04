@@ -21,7 +21,7 @@ const About = () => {
               </div>
               <div>
                 <img
-                  src="https://gamma.app/#images" 
+                  src="https://cdn.gamma.app/rqy3owznzo24vup/generated-images/Tgo9l37SGKFnP4qJIgkGZ.jpg" 
                   alt="Forge Revenue Image"
                   className="rounded-lg shadow-lg w-full"
                 />
