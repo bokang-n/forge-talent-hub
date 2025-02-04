@@ -8,7 +8,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="/" className="text-2xl font-bold text-primary">
-              <img src="/public/2.png" alt="ForgeTalent Logo"></img>
+              <img src="/public/2-removebg-preview.png" alt="ForgeTalent Logo" width="600"></img>
             </a>
           </div>
 
