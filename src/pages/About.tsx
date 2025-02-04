@@ -21,7 +21,7 @@ const About = () => {
               </div>
               <div>
                 <img
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
+                  src="https://github.com/bokang-n/forge-talent-hub/blob/main/public/LcQ-h47OajhQJZ4U00-zj.jpg?raw=true"
                   alt="Diverse group of professionals"
                   className="rounded-lg shadow-lg w-full"
                 />
