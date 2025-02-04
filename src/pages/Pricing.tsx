@@ -37,7 +37,13 @@ const Pricing = () => {
       ],
     },
   ];
-
+name: "Enterprise Plan",
+      price: "Custom pricing",
+      features: [
+        "All Annual features",
+        "Custom learning paths",
+        "Dedicated account manager",
+        "Team analytics dashboard",
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
