@@ -10,8 +10,14 @@ import {
 import { MessageCircle, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
+type Message = {
+  type: "bot" | "user";
+  content: string;
+  options?: string[];
+};
+
 const AIChatbot = () => {
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<Message[]>([
     {
       type: "bot",
       content: "Hi! I'm your AI career guide. How can I help you today?",
