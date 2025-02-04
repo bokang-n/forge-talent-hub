@@ -1,4 +1,4 @@
-import { Bot, Certificate, CreditCard, Users, Building2 } from "lucide-react";
+import { Bot, Award, CreditCard, Users, Building2 } from "lucide-react";
 
 const features = [
   {
@@ -7,7 +7,7 @@ const features = [
     description: "Get personalized career guidance powered by AI",
   },
   {
-    icon: Certificate,
+    icon: Award,
     title: "Industry-Recognized Certifications",
     description: "Earn certifications from AWS, DMI, CompTIA, and more",
   },
