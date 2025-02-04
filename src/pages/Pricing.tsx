@@ -37,13 +37,46 @@ const Pricing = () => {
       ],
     },
   ];
-name: "Enterprise Plan",
-      price: "Custom pricing",
-      features: [
-        "All Annual features",
-        "Custom learning paths",
-        "Dedicated account manager",
-        "Team analytics dashboard",
+public class PricingRationale {
+
+    private String planName;
+    private double monthlyPrice;
+    private double yearlyPrice;
+
+    public PricingRationale(String planName, double monthlyPrice, double yearlyPrice) {
+        this.planName = planName;
+        this.monthlyPrice = monthlyPrice;
+        this.yearlyPrice = yearlyPrice;
+    }
+
+    // Method to calculate yearly savings compared to paying monthly for 12 months
+    public double calculateSavings() {
+        double totalMonthlyCost = monthlyPrice * 12;
+        return totalMonthlyCost - yearlyPrice;
+    }
+
+    // Method to display the pricing rationale
+    public void displayRationale() {
+        double savings = calculateSavings();
+        System.out.println("Plan: " + planName);
+        System.out.println("  - Monthly Price: R" + monthlyPrice);
+        System.out.println("  - Yearly Price: R" + yearlyPrice);
+        System.out.println("  - Savings with Yearly Plan: R" + savings + "\n");
+    }
+
+    public static void main(String[] args) {
+        // Define subscription plans
+        PricingRationale standardPlan = new PricingRationale("Standard Subscription (1 Course at a Time)", 850, 9500);
+        PricingRationale premiumPlan = new PricingRationale("Premium Subscription (All Courses + Career Guidance)", 1500, 16000);
+        PricingRationale corporatePlan = new PricingRationale("Corporate Access (Per User, 10 User Minimum)", 1200, 13000);
+
+        // Display pricing rationale for each plan
+        standardPlan.displayRationale();
+        premiumPlan.displayRationale();
+        corporatePlan.displayRationale();
+    }
+}
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
