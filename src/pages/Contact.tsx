@@ -101,7 +101,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>123 Innovation Street, Tech Hub, Cape Town, 8001</span>
+                  <span>210 Epsom Avenue Randburg 2169 </span>
                 </div>
               </div>
             </div>
