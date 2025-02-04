@@ -21,7 +21,7 @@ const About = () => {
               </div>
               <div>
                 <img
-                  src="https://images.pexels.com/photos/556416/pexels-photo-556416.jpeg?cs=srgb&dl=landscape-mountains-nature-556416.jpg&fm=jpg"
+                  src="https://cdn.gamma.app/rqy3owznzo24vup/generated-images/LcQ-h47OajhQJZ4U00-zj.jpg" 
                   alt="Forge Revenue Image"
                   className="rounded-lg shadow-lg w-full"
                 />
