@@ -16,6 +16,37 @@ type Message = {
   options?: string[];
 };
 
+const questions = [
+  {
+    question: "What is your primary area of interest in technology?",
+    options: ["Software Development", "Cloud Computing", "Cybersecurity", "Data Science", "Digital Marketing"],
+  },
+  {
+    question: "How much technical experience do you currently have?",
+    options: ["No Experience", "Beginner", "Intermediate", "Advanced"],
+  },
+  {
+    question: "What is your preferred learning style?",
+    options: ["Self-paced", "Instructor-led", "Hands-on Projects", "Mixed Learning"],
+  },
+  {
+    question: "What is your career goal in the next 2 years?",
+    options: ["Career Switch", "Skill Enhancement", "Certification", "Leadership Role"],
+  },
+  {
+    question: "Which type of work environment interests you most?",
+    options: ["Remote Work", "Office-based", "Hybrid", "Freelancing"],
+  },
+];
+
+const courseRecommendations = {
+  "Software Development": ["Full Stack Web Development", "Mobile App Development"],
+  "Cloud Computing": ["AWS Certified Solutions Architect", "Azure Fundamentals"],
+  "Cybersecurity": ["CompTIA Security+", "Ethical Hacking"],
+  "Data Science": ["Data Analytics Fundamentals", "Machine Learning Basics"],
+  "Digital Marketing": ["Digital Marketing Professional", "Social Media Marketing"],
+};
+
 const AIChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -25,13 +56,15 @@ const AIChatbot = () => {
     },
   ]);
   const [input, setInput] = useState("");
+  const [currentQuestion, setCurrentQuestion] = useState(-1);
+  const [surveyAnswers, setSurveyAnswers] = useState<string[]>([]);
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    // Add user message
     setMessages((prev) => [...prev, { type: "user", content: input }]);
+    setInput("");
 
     // Simulate bot response
     setTimeout(() => {
@@ -44,25 +77,81 @@ const AIChatbot = () => {
         },
       ]);
     }, 1000);
-
-    setInput("");
   };
 
   const handleOptionClick = (option: string) => {
     setMessages((prev) => [...prev, { type: "user", content: option }]);
 
-    // Simulate bot response based on option selected
+    if (option === "Take Talent Survey") {
+      setCurrentQuestion(0);
+      setTimeout(() => {
+        setMessages((prev) => [
+          ...prev,
+          {
+            type: "bot",
+            content: questions[0].question,
+            options: questions[0].options,
+          },
+        ]);
+      }, 1000);
+      return;
+    }
+
+    // Handle survey answers
+    if (currentQuestion >= 0 && currentQuestion < questions.length) {
+      setSurveyAnswers((prev) => [...prev, option]);
+      
+      if (currentQuestion === questions.length - 1) {
+        // Survey complete - provide recommendations
+        const primaryInterest = surveyAnswers[0];
+        const recommendations = courseRecommendations[primaryInterest as keyof typeof courseRecommendations] || [];
+        
+        setTimeout(() => {
+          setMessages((prev) => [
+            ...prev,
+            {
+              type: "bot",
+              content: `Based on your responses, here are your recommended courses:\n${recommendations.join("\n")}`,
+              options: ["Explore Courses", "Start New Survey", "Contact Support"],
+            },
+          ]);
+        }, 1000);
+        
+        setCurrentQuestion(-1);
+        setSurveyAnswers([]);
+      } else {
+        // Move to next question
+        const nextQuestion = currentQuestion + 1;
+        setCurrentQuestion(nextQuestion);
+        
+        setTimeout(() => {
+          setMessages((prev) => [
+            ...prev,
+            {
+              type: "bot",
+              content: questions[nextQuestion].question,
+              options: questions[nextQuestion].options,
+            },
+          ]);
+        }, 1000);
+      }
+      return;
+    }
+
+    // Handle other options
     setTimeout(() => {
       let response = "";
       switch (option) {
-        case "Take Talent Survey":
-          response = "Great! Let's start your talent assessment. First, what's your primary field of interest?";
-          break;
         case "Explore Courses":
           response = "We have a variety of courses available. What subject area interests you the most?";
           break;
         case "Contact Support":
           response = "I'll connect you with our support team. Please provide a brief description of your inquiry.";
+          break;
+        case "Start New Survey":
+          setCurrentQuestion(0);
+          setSurveyAnswers([]);
+          response = questions[0].question;
           break;
         default:
           response = "How else can I assist you today?";
@@ -72,7 +161,7 @@ const AIChatbot = () => {
         {
           type: "bot",
           content: response,
-          options: ["Take Talent Survey", "Explore Courses", "Contact Support"],
+          options: option === "Start New Survey" ? questions[0].options : ["Take Talent Survey", "Explore Courses", "Contact Support"],
         },
       ]);
     }, 1000);
