@@ -37,53 +37,6 @@ const Pricing = () => {
       ],
     },
   ];
-import React from "react";
-
-interface SubscriptionPlanProps {
-  planName: string;
-  monthlyPrice: number;
-  yearlyPrice: number;
-}
-
-const SubscriptionPlan: React.FC<SubscriptionPlanProps> = ({ planName, monthlyPrice, yearlyPrice }) => {
-  const calculateSavings = (): number => {
-    const totalMonthlyCost = monthlyPrice * 12;
-    return totalMonthlyCost - yearlyPrice;
-  };
-
-  return (
-    <div className="p-4 border rounded-lg shadow-md mb-4">
-      <h3 className="text-xl font-bold">{planName}</h3>
-      <p>Monthly Price: <strong>R{monthlyPrice}</strong></p>
-      <p>Yearly Price: <strong>R{yearlyPrice}</strong></p>
-      <p className="text-green-600">Savings with Yearly Plan: <strong>R{calculateSavings()}</strong></p>
-    </div>
-  );
-};
-
-const PricingRationale: React.FC = () => {
-  const subscriptionPlans = [
-    { planName: "Standard Subscription (1 Course at a Time)", monthlyPrice: 850, yearlyPrice: 9500 },
-    { planName: "Premium Subscription (All Courses + Career Guidance)", monthlyPrice: 1500, yearlyPrice: 16000 },
-    { planName: "Corporate Access (Per User, 10 User Minimum)", monthlyPrice: 1200, yearlyPrice: 13000 }
-  ];
-
-  return (
-    <div className="max-w-3xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Pricing Rationale</h2>
-      {subscriptionPlans.map((plan, index) => (
-        <SubscriptionPlan
-          key={index}
-          planName={plan.planName}
-          monthlyPrice={plan.monthlyPrice}
-          yearlyPrice={plan.yearlyPrice}
-        />
-      ))}
-    </div>
-  );
-};
-
-export default PricingRationale;
 
   return (
     <div className="min-h-screen flex flex-col">
