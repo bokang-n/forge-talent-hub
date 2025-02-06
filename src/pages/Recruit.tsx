@@ -43,7 +43,7 @@ const Recruit = () => {
 
               <div className="lg:w-1/2">
                 <img 
-                  src="public/n3cMuR1Gwkj_DhhLMhPw5.jpg"
+                  src="https://cdn.gamma.app/rqy3owznzo24vup/generated-images/n3cMuR1Gwkj_DhhLMhPw5.jpg"
                   alt="Tech recruitment"
                   className="rounded-lg w-full"
                 />
