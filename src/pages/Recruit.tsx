@@ -43,7 +43,7 @@ const Recruit = () => {
 
               <div className="lg:w-1/2">
                 <img 
-                  src="https://github.com/bokang-n/forge-talent-hub/blob/main/public/n3cMuR1Gwkj_DhhLMhPw5.jpg?raw=true"
+                  src="public/n3cMuR1Gwkj_DhhLMhPw5.jpg"
                   alt="Tech recruitment"
                   className="rounded-lg w-full"
                 />
