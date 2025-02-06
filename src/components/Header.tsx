@@ -3,7 +3,7 @@ import { Menu } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
+    <header className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-md z-50 border-b border-purple-900/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -19,41 +19,41 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-secondary hover:text-primary transition-colors">
+            <a href="/" className="text-purple-200 hover:text-purple-400 transition-colors">
               Home
             </a>
-            <a href="/about" className="text-secondary hover:text-primary transition-colors">
+            <a href="/about" className="text-purple-200 hover:text-purple-400 transition-colors">
               About
             </a>
-            <a href="/courses" className="text-secondary hover:text-primary transition-colors">
+            <a href="/courses" className="text-purple-200 hover:text-purple-400 transition-colors">
               Courses
             </a>
-            <a href="/testing-centre" className="text-secondary hover:text-primary transition-colors">
+            <a href="/testing-centre" className="text-purple-200 hover:text-purple-400 transition-colors">
               Testing Centre
             </a>
-            <a href="/pricing" className="text-secondary hover:text-primary transition-colors">
+            <a href="/pricing" className="text-purple-200 hover:text-purple-400 transition-colors">
               Pricing
             </a>
-            <a href="/recruit" className="text-secondary hover:text-primary transition-colors">
+            <a href="/recruit" className="text-purple-200 hover:text-purple-400 transition-colors">
               Recruit
             </a>
-            <a href="/referral" className="text-secondary hover:text-primary transition-colors">
+            <a href="/referral" className="text-purple-200 hover:text-purple-400 transition-colors">
               Referral Program
             </a>
-            <a href="/contact" className="text-secondary hover:text-primary transition-colors">
+            <a href="/contact" className="text-purple-200 hover:text-purple-400 transition-colors">
               Contact
             </a>
           </nav>
 
           <div className="hidden md:block">
-            <Button variant="default" className="bg-primary hover:bg-primary/90">
+            <Button variant="default" className="bg-purple-600 hover:bg-purple-700 text-white">
               Get Started
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button className="md:hidden p-2">
-            <Menu className="h-6 w-6 text-secondary" />
+            <Menu className="h-6 w-6 text-purple-200" />
           </button>
         </div>
       </div>

@@ -3,20 +3,36 @@ import { MessageSquare } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-b from-white to-gray-50 pt-20">
-      <div className="container mx-auto px-4 py-20">
+    <div className="relative bg-background min-h-screen flex items-center">
+      {/* Video Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          className="w-full h-full object-cover opacity-40"
+        >
+          <source src="https://cdn.gpteng.co/videos/ai-future.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background"></div>
+      </div>
+
+      <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-gradient mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
             Empower Your Career with AI-Driven Learning
           </h1>
-          <p className="text-xl md:text-2xl text-secondary mb-8">
+          <p className="text-xl md:text-2xl text-purple-200 mb-8">
             Gain the skills and certifications you need to land your dream job
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary hover:bg-primary/90 text-lg px-8 py-6">
+            <Button className="bg-purple-600 hover:bg-purple-700 text-lg px-8 py-6">
               Explore Courses
             </Button>
-            <Button variant="outline" className="text-lg px-8 py-6">
+            <Button 
+              variant="outline" 
+              className="text-lg px-8 py-6 border-purple-500 text-purple-400 hover:bg-purple-900/20"
+            >
               <MessageSquare className="mr-2 h-5 w-5" />
               Chat with AI
             </Button>
@@ -24,8 +40,8 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative background */}
-      <div className="absolute inset-0 bg-grid-gray-100/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
     </div>
   );
 };
