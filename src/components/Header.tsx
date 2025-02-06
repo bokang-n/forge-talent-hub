@@ -34,6 +34,9 @@ const Header = () => {
             <a href="/pricing" className="text-secondary hover:text-primary transition-colors">
               Pricing
             </a>
+            <a href="/recruit" className="text-secondary hover:text-primary transition-colors">
+              Recruit
+            </a>
             <a href="/referral" className="text-secondary hover:text-primary transition-colors">
               Referral Program
             </a>

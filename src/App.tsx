@@ -10,6 +10,7 @@ import Pricing from "./pages/Pricing";
 import Referral from "./pages/Referral";
 import Contact from "./pages/Contact";
 import TestingCentre from "./pages/TestingCentre";
+import Recruit from "./pages/Recruit";
 import NotFound from "./pages/NotFound";
 import AIChatbot from "./components/AIChatbot";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/referral" element={<Referral />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/testing-centre" element={<TestingCentre />} />
+          <Route path="/recruit" element={<Recruit />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <AIChatbot />
