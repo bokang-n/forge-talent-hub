@@ -9,7 +9,7 @@ const Header = () => {
           <div className="flex items-center">
             <a href="/" className="text-2xl font-bold text-primary">
               <img 
-                src="/4-removebg-preview (1).png"
+                src="./public/forge_logo.jpg"
                 alt="Forge Talent Logo"
                 height="44"
                 width="150"
