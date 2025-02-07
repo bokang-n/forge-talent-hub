@@ -11,8 +11,8 @@ const Header = () => {
               <img 
                 src="./public/forge_logo.jpg"
                 alt="Forge Talent Logo"
-                height="50"
-                width="50"
+                height="44"
+                width="44"
               />
             </a>
           </div>
