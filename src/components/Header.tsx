@@ -7,12 +7,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-primary">
+            <a>
               <img 
                 src="./public/forge_logo.jpg"
                 alt="Forge Talent Logo"
-                height="50"
-                width="50"
+                height="45"
+                width="45"
               />
             </a>
           </div>
