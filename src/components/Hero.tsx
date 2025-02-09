@@ -33,11 +33,16 @@ const Hero = () => {
               muted
               className="w-full"
             >
-              <source src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </div>
+              <source src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4" 
+             type="video/mp4" 
+             controls 
+             autoplay 
+             playsinline>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
       
       {/* Decorative elements */}
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
