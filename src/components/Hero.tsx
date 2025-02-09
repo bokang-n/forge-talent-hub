@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
 
@@ -12,7 +13,7 @@ const Hero = () => {
           muted
           className="w-full h-full object-cover opacity-40"
         >
-          <source src="/invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4" type="video/mp4" />
+          <source src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background"></div>
       </div>
