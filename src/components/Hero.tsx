@@ -33,11 +33,41 @@ const Hero = () => {
               muted
               className="w-full"
             >
-              <source src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </div>
+              <source src=<div>
+  <div>
+    <div>
+      <video id="careerVideo" 
+             src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4" 
+             type="video/mp4" 
+             muted 
+             autoplay 
+             playsinline 
+             loop 
+             controls>
+        Your browser does not support the video tag.
+      </video>
+      <button id="unmuteButton" style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px;">
+        Unmute Video
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById('careerVideo');
+  const unmuteButton = document.getElementById('unmuteButton');
+
+  unmuteButton.addEventListener('click', () => {
+    if (video.muted) {
+      video.muted = false;
+      unmuteButton.textContent = 'Mute Video';
+    } else {
+      video.muted = true;
+      unmuteButton.textContent = 'Unmute Video';
+    }
+  });
+</script>
+
       
       {/* Decorative elements */}
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
