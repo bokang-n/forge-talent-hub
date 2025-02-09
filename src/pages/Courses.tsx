@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ const Courses = () => {
   const [priceRange, setPriceRange] = useState([0]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black">
       <Header />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-4">
@@ -20,11 +21,11 @@ const Courses = () => {
             <Input
               type="search"
               placeholder="Find your course"
-              className="max-w-md"
+              className="max-w-md bg-black/40 border-purple-500/30 text-purple-200 placeholder:text-purple-400"
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Select>
-                <SelectTrigger>
+                <SelectTrigger className="border-purple-500/30 bg-black/40 text-purple-200">
                   <SelectValue placeholder="Certification Type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -36,7 +37,7 @@ const Courses = () => {
               </Select>
 
               <Select>
-                <SelectTrigger>
+                <SelectTrigger className="border-purple-500/30 bg-black/40 text-purple-200">
                   <SelectValue placeholder="Course Format" />
                 </SelectTrigger>
                 <SelectContent>
@@ -46,7 +47,7 @@ const Courses = () => {
               </Select>
 
               <div className="space-y-2">
-                <label className="text-sm text-gray-500">
+                <label className="text-sm text-purple-400">
                   Price Range: R{priceRange[0]}
                 </label>
                 <Slider
@@ -54,29 +55,30 @@ const Courses = () => {
                   max={20000}
                   step={1000}
                   onValueChange={setPriceRange}
+                  className="py-4"
                 />
               </div>
             </div>
           </div>
 
           {/* Course Listings */}
-          <h1 className="text-3xl font-bold mb-8">Explore Our Courses</h1>
+          <h1 className="text-3xl font-bold mb-8 text-gradient">Explore Our Courses</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.map((course, index) => (
-              <Card key={index}>
+              <Card key={index} className="bg-black/40 border-purple-500/20 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>{course.title}</CardTitle>
+                  <CardTitle className="text-purple-200">{course.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">{course.description}</p>
-                  <div className="space-y-2 text-sm text-gray-500">
+                  <p className="text-purple-300/80 mb-4">{course.description}</p>
+                  <div className="space-y-2 text-sm text-purple-400">
                     <p>Duration: {course.duration}</p>
                     <p>Format: {course.format}</p>
                     <p>Price: R{course.price}</p>
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">Enroll Now</Button>
+                  <Button className="w-full bg-purple-600 hover:bg-purple-700">Enroll Now</Button>
                 </CardFooter>
               </Card>
             ))}
