@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -39,44 +40,44 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black">
       <Header />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-4">
           <section className="mb-16">
-            <h1 className="text-4xl font-bold text-center mb-12">Choose the Plan That Works for You</h1>
+            <h1 className="text-4xl font-bold text-center mb-12 text-gradient">Choose the Plan That Works for You</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {plans.map((plan, index) => (
-                <Card key={index} className="flex flex-col">
+                <Card key={index} className="flex flex-col bg-purple-900/10 border-purple-500/20">
                   <CardHeader>
-                    <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                    <p className="text-3xl font-bold mt-4">{plan.price}</p>
+                    <CardTitle className="text-2xl text-purple-200">{plan.name}</CardTitle>
+                    <p className="text-3xl font-bold mt-4 text-gradient">{plan.price}</p>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <ul className="space-y-4">
                       {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <Check className="h-5 w-5 text-green-500" />
+                        <li key={i} className="flex items-center gap-2 text-purple-200">
+                          <Check className="h-5 w-5 text-purple-400" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full">Choose Plan</Button>
+                    <Button className="w-full bg-purple-600 hover:bg-purple-700">Choose Plan</Button>
                   </CardFooter>
                 </Card>
               ))}
             </div>
           </section>
 
-          <section className="mb-16 bg-gray-50 rounded-lg p-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">Earn Discounts by Referring Friends</h2>
-            <p className="text-lg mb-6 max-w-2xl mx-auto">
+          <section className="mb-16 bg-purple-900/10 rounded-lg p-8 text-center border border-purple-500/20">
+            <h2 className="text-3xl font-bold mb-4 text-gradient">Earn Discounts by Referring Friends</h2>
+            <p className="text-lg mb-6 max-w-2xl mx-auto text-purple-200">
               Refer a friend to Forge Talent, and when they enroll in a course, you'll receive a discount
               on your next course. It's our way of saying thank you for spreading the word!
             </p>
-            <Button variant="outline" className="gap-2" asChild>
+            <Button variant="outline" className="gap-2 border-purple-500 text-purple-200 hover:text-purple-100" asChild>
               <a href="/referral">
                 <Users className="h-5 w-5" />
                 Learn More
