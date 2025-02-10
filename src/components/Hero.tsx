@@ -47,8 +47,9 @@ const Hero = () => {
               ref={videoRef}
               className="w-full"
               src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4"
+              playsInline
             />
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
               <button
                 onClick={togglePlayPause}
                 className="p-3 bg-purple-600/80 text-white rounded-full shadow-lg hover:bg-purple-700/80 focus:outline-none backdrop-blur-sm transition-all"
