@@ -1,22 +1,37 @@
 
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
-import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { Play, Pause } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
 
 const Hero = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const location = useLocation();
 
+  const togglePlayPause = async () => {
+    if (videoRef.current) {
+      try {
+        if (isPlaying) {
+          await videoRef.current.pause();
+        } else {
+          await videoRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+      } catch (error) {
+        console.error('Error toggling video:', error);
+      }
+    }
+  };
+
+  // Handle video end
   useEffect(() => {
     const video = videoRef.current;
-    if (video && location.pathname === '/') {
-      video.loop = true;
-      video.play().catch(error => {
-        console.error('Error playing video:', error);
-      });
+    if (video) {
+      const handleEnded = () => setIsPlaying(false);
+      video.addEventListener('ended', handleEnded);
+      return () => video.removeEventListener('ended', handleEnded);
     }
-  }, [location.pathname]);
+  }, []);
 
   return (
     <div className="relative bg-background min-h-screen">
@@ -41,13 +56,22 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl">
+          <div className="max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl relative">
             <video
               ref={videoRef}
               className="w-full"
               src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4"
               playsInline
+              onClick={togglePlayPause}
             />
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
+              <button
+                onClick={togglePlayPause}
+                className="p-3 bg-purple-600/80 text-white rounded-full shadow-lg hover:bg-purple-700/80 focus:outline-none backdrop-blur-sm transition-all"
+              >
+                {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
