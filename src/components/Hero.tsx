@@ -1,8 +1,24 @@
 
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
+import { Play, Pause } from "lucide-react";
+import { useState, useRef } from "react";
 
 const Hero = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <div className="relative bg-background min-h-screen">
       <div className="container mx-auto px-4 py-20">
@@ -26,20 +42,24 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl">
+          <div className="max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl relative">
             <video
-              autoPlay
-              loop
-              muted
+              ref={videoRef}
               className="w-full"
-            >
-              <source src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4" type="video/mp4" />
-            </video>
+              src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4"
+            />
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <button
+                onClick={togglePlayPause}
+                className="p-3 bg-purple-600/80 text-white rounded-full shadow-lg hover:bg-purple-700/80 focus:outline-none backdrop-blur-sm transition-all"
+              >
+                {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
       
-      {/* Decorative elements */}
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
     </div>
   );
