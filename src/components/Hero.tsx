@@ -2,22 +2,36 @@
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
 import { Play, Pause } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const togglePlayPause = () => {
+  const togglePlayPause = async () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
+      try {
+        if (isPlaying) {
+          await videoRef.current.pause();
+        } else {
+          await videoRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+      } catch (error) {
+        console.error('Error toggling video:', error);
       }
-      setIsPlaying(!isPlaying);
     }
   };
+
+  // Handle video end
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      const handleEnded = () => setIsPlaying(false);
+      video.addEventListener('ended', handleEnded);
+      return () => video.removeEventListener('ended', handleEnded);
+    }
+  }, []);
 
   return (
     <div className="relative bg-background min-h-screen">
@@ -48,6 +62,7 @@ const Hero = () => {
               className="w-full"
               src="/freecompress-invideo-ai-1080 Unlock Your Career with Forge Talent! 2025-02-07.mp4"
               playsInline
+              onClick={togglePlayPause}
             />
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
               <button
