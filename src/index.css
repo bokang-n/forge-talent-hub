@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,6 +36,28 @@
   }
 }
 
-.text-gradient {
-  @apply bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent;
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent;
+  }
+  
+  .page-heading {
+    @apply text-4xl md:text-6xl font-bold text-center mb-6;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4;
+  }
+  
+  .page-description {
+    @apply text-xl text-center text-muted-foreground mb-8 max-w-2xl mx-auto;
+  }
+  
+  .button-container {
+    @apply flex flex-col sm:flex-row gap-4 justify-center items-center mb-8;
+  }
+  
+  .content-section {
+    @apply max-w-6xl mx-auto px-4 py-12;
+  }
 }
