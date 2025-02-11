@@ -16,6 +16,13 @@ const Courses = () => {
       <Header />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-4">
+          <div className="mb-12">
+            <img 
+              src="/AGaYVfTtLaax-4Aav_NX-.jpg" 
+              alt="Course overview" 
+              className="w-full h-64 object-cover rounded-lg"
+            />
+          </div>
           {/* Filter Section */}
           <div className="mb-8 space-y-6">
             <Input

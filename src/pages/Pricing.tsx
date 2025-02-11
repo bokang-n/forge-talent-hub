@@ -44,6 +44,13 @@ const Pricing = () => {
       <Header />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-4">
+          <div className="mb-12">
+            <img 
+              src="/Bij7Ox0h80RC5Csb-lM4J.jpg" 
+              alt="Pricing overview" 
+              className="w-full h-64 object-cover rounded-lg"
+            />
+          </div>
           <section className="mb-16">
             <h1 className="text-4xl font-bold text-center mb-12 text-gradient">Choose the Plan That Works for You</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
