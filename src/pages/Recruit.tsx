@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -67,7 +68,7 @@ const Recruit = () => {
             <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
               <div className="lg:w-1/2">
                 <img 
-                  src="/m-BkSqxOl5XNrXxSwqoSz.jpg"
+                  src="/BkSqxOl5XNrXxSwqoSz.jpg"
                   alt="Tech requirements"
                   className="rounded-lg w-full"
                 />
