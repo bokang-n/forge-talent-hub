@@ -43,7 +43,7 @@ const Recruit = () => {
 
               <div className="lg:w-1/2">
                 <img 
-                  src="/BkSqxOl5XNrXxSwqoSz.jpg"
+                  src="https://th.bing.com/th/id/OIP.E057KecXIppTg_yckqb0rQEyDL?rs=1&pid=ImgDetMain"
                   alt="Tech recruitment"
                   className="rounded-lg w-full"
                 />
