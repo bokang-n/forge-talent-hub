@@ -43,7 +43,7 @@ const Recruit = () => {
 
               <div className="lg:w-1/2">
                 <img 
-                  src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcreate.vista.com%2Ftemplates%2Fwork-profile-of-recruiting-agency-on-blue-gradient%2Fid-61b37428079dcd9363759c2e%2F&psig=AOvVaw1ncfQ-ai1ryEg94h9sVQnl&ust=1739443694184000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOj__fP6vYsDFQAAAAAdAAAAABAE"
+                  src="https://img.freepik.com/premium-photo/global-business-model-prioritizing-networking-data-exchange-customer-connections-hr-recruitment-outsourcing-concept-networking-strategies-data-exchange-best-practices-customer-engagement_918839-135034.jpg"
                   alt="Tech recruitment"
                   className="rounded-lg w-full"
                 />
